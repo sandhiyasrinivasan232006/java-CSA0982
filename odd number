@@ -1,0 +1,9 @@
+public class PrintOddNumbers {
+    public static void main(String[] args) {
+        int n = 7;
+        System.out.print("Odd numbers up to " + n + " are: ");
+        for (int i = 1; i < n; i += 2) {
+            System.out.print(i + " ");
+        }
+    }
+}
