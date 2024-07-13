@@ -1,0 +1,9 @@
+public class SquareAndCubeCalculator {
+    public static void main(String[] args) {
+        double n = 0.6;
+        double squareNumber = n * n;
+        double cubeNumber = n * n * n;
+        System.out.println("Square Number: " + squareNumber);
+        System.out.println("Cube Number: " + cubeNumber);
+    }
+}
