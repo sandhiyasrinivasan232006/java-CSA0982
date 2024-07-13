@@ -1,0 +1,10 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a perfect square number: ");
+        int number = scanner.nextInt();
+        double squareRoot = Math.sqrt(number);
+        System.out.println("Square root of " + number + " is: " + squareRoot);
+    }
+}
