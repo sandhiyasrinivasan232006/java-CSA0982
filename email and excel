@@ -1,0 +1,20 @@
+import org.apache.poi.ss.usermodel.*;
+public class ExcelReader {
+    public static void main(String[] args) {
+        try {
+            Workbook workbook = WorkbookFactory.create(new File("example.xlsx"));
+            Sheet sheet = workbook.getSheetAt(0);
+            Row row = sheet.getRow(0);
+
+            String email = row.getCell(0).getStringCellValue();
+            String password = row.getCell(1).getStringCellValue();
+
+            System.out.println("Email: " + email);
+            System.out.println("Password: " + password);
+
+            workbook.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
