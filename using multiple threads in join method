@@ -1,0 +1,20 @@
+class MyThread extends Thread {
+    public void run() {
+        System.out.println(Thread.currentThread().getName() + " is running.");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        MyThread thread1 = new MyThread();
+        MyThread thread2 = new MyThread();
+        try {
+            thread1.start();
+            Thread.sleep(500); 
+            thread2.start();
+            thread1.join(); 
+            thread2.join();
+        } catch (InterruptedException e) {
+            System.out.println("Thread interrupted.");
+        }
+    }
+}
