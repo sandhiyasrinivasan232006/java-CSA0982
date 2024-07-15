@@ -1,0 +1,13 @@
+public class Overload {
+    public void assignValues(int a, int b) {
+        System.out.println("Assigning values using two arguments: " + a + " and " + b);
+    }
+    public void assignValues(int a) {
+        System.out.println("Assigning value using one argument: " + a);
+    }
+    public static void main(String[] args) {
+        Overload obj = new Overload();
+        obj.assignValues(10, 20); // Calls the method with two arguments
+        obj.assignValues(5);      // Calls the method with one argument
+    }
+}
