@@ -1,0 +1,19 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        String input = "This is a test string with banned words like hit and ball";
+        String[] banned = {"hit", "ball"};
+        List<String> bannedWordsFound = findBannedWords(input, banned);
+        System.out.println("Banned words found: " + bannedWordsFound);
+    }
+    public static List<String> findBannedWords(String input, String[] banned) {
+        List<String> bannedWordsFound = new ArrayList<>();
+        String[] words = input.split("\\s+"); // split into words
+        for (String word : words) {
+            if (Arrays.asList(banned).contains(word.toLowerCase())) {
+                bannedWordsFound.add(word);
+            }
+        }
+        return bannedWordsFound;
+    }
+}
