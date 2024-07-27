@@ -1,0 +1,17 @@
+public class MultiplicationTable implements Runnable {
+    private int number;
+    public MultiplicationTable(int number) {
+        this.number = number;
+    }
+    public void run() {
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(number + " X " + i + " = " + (number * i));
+        }
+    }
+    public static void main(String[] args) {
+        Thread table5 = new Thread(new MultiplicationTable(5));
+        Thread table10 = new Thread(new MultiplicationTable(10));
+        table5.start();
+        table10.start();
+    }
+}
