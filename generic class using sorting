@@ -1,0 +1,25 @@
+import java.util.Arrays;
+import java.util.Comparator;
+public class GenericSorter<T> {
+    private T[] array;
+    private Comparator<T> comparator;
+    public GenericSorter(T[] array, Comparator<T> comparator) {
+        this.array = array;
+        this.comparator = comparator;
+    }
+    public void sort() {
+        Arrays.sort(array, comparator);
+    }
+    public T[] getArray() {
+        return array;
+    }
+    public static void main(String[] args) {
+        Integer[] intArray = { 4, 2, 7, 1, 9 };
+        GenericSorter<Integer> intSorter = new GenericSorter<>(intArray, Integer::compareTo);
+        intSorter.sort();
+        System.out.println("Sorted Integer array: " + Arrays.toString(intSorter.getArray()));
+         String> strSorter = new GenericSorter<>(strArray, String::compareTo);
+        strSorter.sort();
+        System.out.println("Sorted String array: " + Arrays.toString(strSorter.getArray()));
+    }
+}
